@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@theme {
+  --color-neon-cyan: #00F3FF;
+  --color-neon-pink: #FF00E5;
+  --color-neon-lime: #39FF14;
+  --color-bg-dark: #050505;
+  --color-bg-panel: #0a0a0a;
+  --color-bg-sidebar: #080808;
+  --color-border-gray: #1f2937; /* Gray-800 */
+}
+
+@layer utilities {
+  @keyframes music-bar {
+    0%, 100% { height: 4px; }
+    50% { height: 12px; }
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .crt-overlay {
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.2) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.05), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.05));
+    background-size: 100% 4px, 4px 100%;
+    pointer-events: none;
+    z-index: 50;
+  }
+
+  .neural-chromatic {
+    filter: url(#chromatic-aberration);
+  }
+
+  @keyframes level-up {
+    0% { filter: brightness(1) contrast(1); }
+    50% { filter: brightness(3) contrast(2); }
+    100% { filter: brightness(1) contrast(1); }
+  }
+
+  .level-up-flash {
+    animation: level-up 0.5s ease-out;
+  }
+}
